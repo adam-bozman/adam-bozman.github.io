@@ -14,12 +14,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: "Hi, I'm Adam."
-email: 'jami0821@gmail.com'
-description: "A finance PhD and deep learning enthusiast."
+email: 'adam.bozman@wsu.edu'
+description: "A finance PhD and machine learning enthusiast."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://adam-bozman.github.io/" # the base hostname & protocol for your site, e.g. https://example.com
-twitter_username: 'jamigibbs'
-github_username: 'jamigibbs'
+twitter_username: 'adam_bozman'
+github_username: 'adam-bozman'
 medium_username: 'blog.jamigibbs.com'
 
 # Build settings
@@ -89,8 +89,8 @@ pagination:
 ############################################################
 
 ### Phantom settings
-footer_text: '© 2018 Jami Gibbs'
-admin_name: 'Jami Gibbs'
+footer_text: '© 2021 Adam Bozman'
+admin_name: 'Adam Bozman'
 google_analytics: "UA-9999999-99" # Update with your own tracking ID
 enable_contact: false
 
