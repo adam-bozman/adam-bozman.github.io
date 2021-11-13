@@ -19,6 +19,7 @@ description: "A finance PhD and machine learning enthusiast."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://adam-bozman.github.io/" # the base hostname & protocol for your site, e.g. https://example.com
 twitter_username: 'adam_bozman'
+linkedin_username: 'adam-bozman-65218b73'
 github_username: 'adam-bozman'
 kaggle_username: 'adambozman'
 
