@@ -1,98 +1,54 @@
-## Phantom for Jekyll
+# jekyll-uno
 
-A minimalist, responsive portfolio theme for [Jekyll](http://jekyllrb.com/) with Bootstrap.
+Jekyll-Uno - a minimal, responsive theme for Jekyll based on the [Uno](https://github.com/daleanthony/Uno) theme for Ghost.
 
-![preview](preview.jpg)
+> :warning:
+  This theme requires ruby and rubygems installed
 
-[See it in action](http://jamigibbs.github.io/phantom/).
+### Features
 
-## Fancy using it for your own site?
+* Clean layout
+* Resposive layout
+* Pagination
+* Syntax highlighting
+* Social links
+* Tags listing page
+* Categories listing page
+* Google Analytics integration
+* Disqus integration
 
-Here are some steps to get you started:
+---
 
-1. Clone this repo and cd into the directory:
+### Install and Test
 
-  ```bash
-  git clone https://github.com/jamigibbs/phantom.git your-dir-name && cd your-dir-name
-  ```
+1. Download or clone repo `git clone git@github.com:joshgerdes/jekyll-uno.git`
+2. Enter the folder: `cd jekyll-uno/`
+3. If you don't have bundler installed: `gem install bundler`
+3. Install Ruby gems: `bundle install`
+4. Start Jekyll server: `bundle exec jekyll serve --watch`
 
-2. Run:
+Access via: [http://localhost:4000/jekyll-uno/](http://localhost:4000/jekyll-uno/)
 
-  ```bash
-  gem install bundler
-  bundle install
-  bundle exec jekyll serve
-  ```
+If you would like to run without using the `github-pages` gem, update your Gemfile to the following:
 
-  You may need to append your commands with `sudo` if you're getting a permissions error.
-
-  _Don't have Jekyll yet? [Get `er installed then!](http://jekyllrb.com/docs/installation/)_
-
-3. Visit in your browser at:
-
-  `http://127.0.0.1:4000`
-
-## Launching with Github Pages :rocket:
-
-Jekyll + Github pages is a marriage made in heaven. You can [use your own custom domain name](https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/) or use the default Github url (ie. http://username.github.io/repository) and not bother messing around with DNS settings.
-
-## Theme Features
-
-### Navigation
-
-Navigation can be customized in `_config.yml` under the `nav_item` key. Default settings:
-
-```yaml
-nav_item:
-    - { url: '/', text: 'Home' }
-    - { url: '/about', text: 'About' }
 ```
-
-Set the `nav_enable` variable to false in `_config.yml` to disable navigation.
-
-### Contact Form
-
-You can display a contact form within the modal window template. This template is already setup to use the [Formspree](https://formspree.io) email system. You'll just want to add your email address to the form in `/_includes/contact-modal.html`.
-
-Place the modal window template in any place you'd like the user to click for the contact form.
-The template will display a link to click for the contact form modal window:
-
-```liquid
-{% include contact.html %}
-{% include contact-modal.html %}
+source 'https://rubygems.org'
+gem 'jekyll-paginate'
+gem 'jekyll-watch'
+gem 'kramdown'
+gem 'kramdown-parser-gfm'
 ```
+---
 
-### Animation Effects
+### Demo and Download
 
-Animations with CSS classes are baked into the theme. To animate a section or element, simply add the animation classes:
+[Demo](http://joshgerdes.com/jekyll-uno/)
+[Download](https://github.com/joshgerdes/jekyll-uno/archive/master.zip)
 
-```html
-<div id="about-me" class="wow fadeIn">
-  I'm the coolest!
-</div>
-```
+![jekyll-uno - free Jekyll theme](/screenshot.png)
 
-For a complete list of animations, see the [animation list](http://daneden.github.io/animate.css/).
+---
 
-### Pagination
+### Copyright and license
 
-By default, pagination on the home page will activate after 10 posts. You can change this within `_config.yml`. You can add the pagination to other layouts with:
-
-```liquid
-  {% for post in paginator.posts %}
-    {% include post-content.html %}
-  {% endfor %}
-
-  {% include pagination.html %}
-```
-
-Read more about the [pagination plugin](http://jekyllrb.com/docs/pagination/).
-
-## Credit
-
-* Bootstrap, http://getbootstrap.com/, (C) 2011 - 2016 Twitter, Inc., [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)
-
-* Wow, https://github.com/matthieua/WOW, (C) 2014 - 2016 Matthieu Aussaguel
-, [GPL](https://github.com/matthieua/WOW#open-source-license)
-
-* Animate.css, https://github.com/daneden/animate.css, (C) 2016 Daniel Eden, [MIT](https://github.com/daneden/animate.css/blob/master/LICENSE)
+It is under [the MIT license](/LICENSE).

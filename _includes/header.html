@@ -1,57 +1,105 @@
-<!doctype html>
-<head>
+<span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
 
-  <!-- Meta -->
-  <meta charset="utf-8">
+<header class="panel-cover {% if site.disable_landing_page %}panel-cover--collapsed{% endif %}"
+  style="background-image: url({{ site.baseurl }}/images/cover.jpg)">
+  <div class="panel-main">
 
-  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% elsif post.title %}{{ post.title }} - {{ site.title }}{% else %}{{ site.title }} - {{ site.description }}{% endif %}</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta content="yes" name="apple-mobile-web-app-capable">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <div class="panel-main__inner panel-inverted">
+      <div class="panel-main__content">
+        <a href="{{ site.baseurl }}/" title="link to home of {{ site.title }}">
+          <img src="{{ site.baseurl }}/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">{{ site.title }}</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">{{ site.description }}</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
 
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} - {{ site.description }}" href="{{ site.url }}/feed.xml">
-  <link rel="alternate" type="application/atom+xml" title="{{ site.title }} - {{ site.description }}" href="{{ site.url }}/atom.xml">
+        <div class="navigation-wrapper">
 
-  <!-- Favicons -->
-  <link rel="icon" href="{{ site.url }}/img/favicon.png">
-
-  <!-- Fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700|Merriweather:400,300,300italic,400italic,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="{{ "/css/animate.min.css" | prepend: site.baseurl }}">
-  <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
-
-</head>
-<body class="{{ post.title | downcase | replace:' ','-' | replace:',','' | strip_html }}{% if page.category %} category-{{ page.category }}{% endif %}{% if page.layout-class %} layout-{{ page.layout-class }}{% endif %}">
-
-<div class="main container" id="top">
-
-  {% if site.enable_nav == true %}
-  <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="/">{{ site.admin_name }}</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              {% for item in site.nav_item %}
-                <li>
-                  <a href="{{ item.url }}">{{ item.text }}</a>
-                </li>
-              {% endfor %}
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="{{ site.baseurl }}/#blog" title="link to {{ site.title }} blog"
+                  class="blog-button">Blog</a></li>
             </ul>
-          </div>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+              {% if site.author.twitter_username %}
+              <!-- Twitter -->
+              <li class="navigation__item">
+                <a href="http://twitter.com/{{ site.author.twitter_username }}"
+                  title="@{{ site.author.twitter_username }} on Twitter" target="_blank">
+                  <i class="icon icon-social-twitter"></i>
+                  <span class="label">Twitter</span>
+                </a>
+              </li>
+              {% endif %}
+
+              {% if site.author.facebook_username %}
+              <!-- Facebook -->
+              <li class="navigation__item">
+                <a href="http://fb.me/{{ site.author.facebook_username }}"
+                  title="{{ site.author.facebook_username }} on Facebook" target="_blank">
+                  <i class="icon icon-social-facebook"></i>
+                  <span class="label">Facebook</span>
+                </a>
+              </li>
+              {% endif %}
+
+              {% if site.author.linkedin_username %}
+              <!-- LinkedIn -->
+              <li class="navigation__item">
+                <a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}"
+                  title="{{ site.author.linkedin_username }} on LinkedIn" target="_blank">
+                  <i class="icon icon-social-linkedin"></i>
+                  <span class="label">LinkedIn</span>
+                </a>
+              </li>
+              {% endif %}
+
+              {% if site.author.github_username %}
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/{{ site.author.github_username }}"
+                  title="{{ site.author.github_username }} on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+              {% endif %}
+
+              {% if site.author.email %}
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:{{ site.author.email }}" title="Email {{ site.author.email }}" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+              {% endif %}
+
+              <!-- RSS -->
+              <li class="navigation__item">
+                <a href="{{ site.baseurl }}/feed.xml" title="Subscribe" target="_blank">
+                  <i class="icon icon-rss"></i>
+                  <span class="label">RSS</span>
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+
+        </div>
+
       </div>
-  </nav>
-  {% endif %}
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
