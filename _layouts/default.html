@@ -1,16 +1,21 @@
+---
+layout: compress
+---
 <!DOCTYPE html>
-<html>
-  {% include head.html %}
+<html lang="en">
 
-  <body>
-    {% include header.html %}
+{% include head.html %}
 
-    <div class="content-wrapper">
-      <div class="content-wrapper__inner">
-        {{ content }}
-      </div>
+<body>
 
-      {% include footer.html %}
-    </div>
-  </body>
+  {% include header.html %}
+
+  {{ content }}
+
+  {% include contact-section.html %}
+
+  {% include footer.html %}
+
+</body>
+
 </html>
