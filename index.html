@@ -114,6 +114,10 @@ permalink: /
                     {% if site.public_key_url %}
                     <li><a class="fa fa-2x fa-key" href="{{ site.public_key_url }}"><span class="description">PGP Key</span></a></li>
                     {% endif %}
+
+                    {% if site.kagle_username %}
+                    <li><a class="fa fa-2x fa-kaggle" href="https://kaggle.com/{{ site.kaggle_username }}"><span class="description">Kaggle</span></a></li>
+                    {% endif %}
                 </ul>
         </div>
 
