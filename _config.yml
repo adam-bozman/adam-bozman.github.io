@@ -1,7 +1,7 @@
 # Site settings
-title: Thomas Zühlke
+title: Adam Bozman
 description: 'Business Card Page'
-url: 'http://thomas.zuehlke.family'
+url: 'http://adam-bozman.github.io/'
 baseurl: ''
 profilepic: '/images/tzuehlke.jpg'
 bkimage: '/images/bk1.jpg'
@@ -9,12 +9,12 @@ google_analytics: UA-XXXXXX-X
 font_awesome: 'XXXXXXXXXX.js'
 
 author:
-  name: 'Thomas Zühlke'
-  email: info@thomas-zuehlke.de
-  twitter_username: thomzuehlke
+  name: 'Adam Bozman'
+  email: adam.bozman@wsu.edu
+  twitter_username: adam
 #  facebook_username: joshgerdes
-  github_username:  tzuehlke
-  linkedin_username:  thomas-zühlke-889182165
+  github_username:  adam-bozman
+  linkedin_username:  adam-bozman-65218b73
   meetup_name: Azure-Meetup-Rostock-MV
 
 # Build settings
