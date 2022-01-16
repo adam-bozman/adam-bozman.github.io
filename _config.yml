@@ -1,10 +1,10 @@
 # Site settings
-title: Adam Bozman
+title: Hi, I'm Adam
 description: 'Business Card Page'
 url: 'http://adam-bozman.github.io/'
 baseurl: ''
 profilepic: '/images/linkedinprofile.jpg'
-bkimage: '/images/bk1.jpg'
+bkimage: '/images/coug.jpg'
 google_analytics: UA-XXXXXX-X
 font_awesome: 'XXXXXXXXXX.js'
 
