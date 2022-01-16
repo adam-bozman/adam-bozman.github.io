@@ -33,7 +33,7 @@
             {% endif %}
 
             {% if site.author.medium_username %}
-              <!-- Facebook -->
+              <!-- Medium -->
               <li class="navigation__item">
                 <a href="http://medium.com/{{ site.author.medium_username }}" title="{{ site.author.medium_username }} on Medium" target="_blank">
                   <!--<i class="icon icon-social-medium"></i>-->
@@ -65,13 +65,13 @@
               </li>
             {% endif %}
 
-            {% if site.author.meetup_name %}
-            <!-- Meetup -->
+            {% if site.author.kaggle_username %}
+            <!-- Kaggle -->
             <li class="navigation__item">
-              <a href="https://www.meetup.com/{{ site.author.meetup_name }}" title="Meetup {{ site.author.meetup_name }}" target="_blank">
-                <!--<div style="font-size: 1.4rem;"><i class="fab fa-meetup fa-lg"></i></div>-->
-                <i class="fab fa-meetup fa-lg"></i>
-                <span class="label">Meetup</span>
+              <a href="https://www.kaggle.com/{{ site.author.kaggle_username }}" title="Kaggle {{ site.author.kaggle_username }}" target="_blank">
+                <!--<div style="font-size: 1.4rem;"><i class="fab fa-kaggle fa-lg"></i></div>-->
+                <i class="fab fa-kaggle fa-lg"></i>
+                <span class="label">Kaggle</span>
               </a>
             </li>
             {% endif %}
