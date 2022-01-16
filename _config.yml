@@ -1,5 +1,5 @@
 # Site settings
-title: Hi, I'm Adam
+title: 'Hi, I'm Adam'
 description: 'Home Page'
 url: 'http://adam-bozman.github.io/'
 baseurl: ''
@@ -15,7 +15,7 @@ author:
   medium_username: @bozmanadam
   github_username:  adam-bozman
   linkedin_username:  adam-bozman-65218b73
-  kaggle_name: adambozman
+  kaggle_username: adambozman
 
 # Build settings
 destination: _site
