@@ -5,7 +5,7 @@ baseurl: "/home" # the subpath of your site, e.g. /blog
 url: "https://adam-bozman.github.io" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
-username: Hi, I'm Adam
+username: Hi, I'm Adam!
 user_description: I'm a doctoral student at Washington State University, studying finance.  I also enjoy exploring different aspects of machine learning, deep learning, and ai.
 user_title: A finance PhD and machine learning enthusiast
 email: adam.bozman@wsu.edu
