@@ -1,110 +1,93 @@
-<span class="mobile btn-mobile-menu">
-  <i class="fas fa-bars btn-mobile-menu__icon"></i>
-  <i class="far fa-times-circle btn-mobile-close__icon hidden"></i>
-</span>
 
-<header class="panel-cover" style="background-image: url({{ site.baseurl }}{{ site.bkimage }})">
-  <div class="panel-main">
+    <header>
 
-    <div class="panel-main__inner panel-inverted">
-    <div class="panel-main__content">
-        <a href="{{ site.baseurl }}/" title="link to home of {{ site.title }}">
-          <img src="{{ site.baseurl }}{{ site.profilepic }}" class="user-image" alt="My Profile Photo">
-          <h1 class="panel-cover__title panel-title">{{ site.title }}</h1>
-        </a>
-        <hr class="panel-cover__divider">
-        <p class="panel-cover__description">Working at <a href="https://www.arvato-systems.de">Arvato Systems</a> as developer and architect for Azure <i class="fas fa-cloud"></i>.</p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary">
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
+        <div class="container">
+          {% if page.title != "about" -%}
+          <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/">
+              {%- if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}  {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif -%}
+          </a>
+          {%- elsif site.enable_navbar_social -%}
+          <!-- Social Icons -->
+          <div class="navbar-brand social">
+            {% include social.html %}
+          </div>
+          {% endif %}
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
 
-        <div class="navigation-wrapper">
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
 
-          <nav class="cover-navigation navigation--social">
-            <ul class="navigation">
-
-            {% if site.author.twitter_username %}
-              <!-- Twitter -->
-              <li class="navigation__item">
-                <a href="http://twitter.com/{{ site.author.twitter_username }}" title="@{{ site.author.twitter_username }} on Twitter" target="_blank">
-                  <!--<i class="icon icon-social-twitter"></i>-->
-                  <i class="fab fa-twitter fa-lg"></i>
-                  <span class="label">Twitter</span>
+              <!-- About -->
+              <li class="nav-item {% if page.title == 'about' %}active{% endif %}">
+                <a class="nav-link" href="{{ '/' | relative_url }}">about
+                  {%- if page.title == "about" -%}
+                  <span class="sr-only">(current)</span>
+                  {%- endif -%}
                 </a>
               </li>
-            {% endif %}
-
-            {% if site.author.facebook_username %}
-              <!-- Facebook -->
-              <li class="navigation__item">
-                <a href="http://fb.me/{{ site.author.facebook_username }}" title="{{ site.author.facebook_username }} on Facebook" target="_blank">
-                  <!--<i class="icon icon-social-facebook"></i>-->
-                  <i class="fab fa-facebook fa-lg"></i>
-                  <span class="label">Facebook</span>
+              {% if site.blog_name %}
+              <!-- Blog -->
+              <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
+                <a class="nav-link" href="{{ '/blog/' | relative_url }}">blog
+                  {%- if page.title == "blog" -%}
+                  <span class="sr-only">(current)</span>
+                  {%- endif -%}
                 </a>
               </li>
-            {% endif %}
+              {%- endif %}
 
-            {% if site.author.linkedin_username %}
-              <!-- LinkedIn -->
-              <li class="navigation__item">
-                <a href="https://www.linkedin.com/in/{{ site.author.linkedin_username }}" title="{{ site.author.linkedin_username }} on LinkedIn" target="_blank">
-                  <!--<i class="icon icon-social-linkedin"></i>-->
-                  <i class="fab fa-linkedin fa-lg"></i>
-                  <span class="label">LinkedIn</span>
+              <!-- Other pages -->
+              {%- assign sorted_pages = site.pages | sort: "title" -%}
+              {%- for p in sorted_pages -%}
+              {%- if p.nav and p.autogen == nil -%}
+              {%- if p.dropdown %}
+              <li class="nav-item dropdown {% if page.title == p.title %}active{% endif %}">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ p.title }}
+                  {%- if page.title == p.title -%}
+                  <span class="sr-only">(current)</span>
+                  {%- endif -%}
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  {%- for child in p.children -%}
+                  {%- if child.title == 'divider' %}
+                  <div class="dropdown-divider"></div>
+                  {%- else %}
+                  <a class="dropdown-item" href="{{ child.permalink | relative_url }}">{{ child.title }}</a>
+                  {%- endif -%}
+                  {% endfor %}
+                </div>
+              </li>
+              {%- else %}
+              <li class="nav-item {% if page.title == p.title %}active{% endif %}">
+                <a class="nav-link" href="{{ p.url | relative_url }}">{{ p.title }}
+                  {%- if page.title == p.title -%}
+                  <span class="sr-only">(current)</span>
+                  {%- endif -%}
                 </a>
               </li>
-            {% endif %}
+              {%- endif -%}
+              {%- endif -%}
+              {% endfor -%}
+              {%- if site.enable_darkmode %}
 
-            {% if site.author.github_username %}
-              <!-- GitHub -->
-              <li class="navigation__item">
-                <a href="https://www.github.com/{{ site.author.github_username }}" title="{{ site.author.github_username }} on GitHub" target="_blank">
-                  <!--<i class="icon icon-social-github"></i>-->
-                  <i class="fab fa-github fa-lg"></i>
-                  <span class="label">GitHub</span>
+              <!-- Toogle theme mode -->
+              <div class = "toggle-container">
+                <a id = "light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
                 </a>
-              </li>
-            {% endif %}
-
-            {% if site.author.meetup_name %}
-            <!-- Meetup -->
-            <li class="navigation__item">
-              <a href="https://www.meetup.com/{{ site.author.meetup_name }}" title="Meetup {{ site.author.meetup_name }}" target="_blank">
-                <!--<div style="font-size: 1.4rem;"><i class="fab fa-meetup fa-lg"></i></div>-->
-                <i class="fab fa-meetup fa-lg"></i>
-                <span class="label">Meetup</span>
-              </a>
-            </li>
-            {% endif %}
-
-            {% if site.author.email %}
-              <!-- Email -->
-              <li class="navigation__item">
-                <a href="mailto:{{ site.author.email }}" title="Email {{ site.author.email }}" target="_blank">
-                  <!--<i class="icon icon-mail"></i>-->
-                  <i class="fas fa-envelope fa-lg"></i>
-                  <span class="label">Email</span>
-                </a>
-              </li>
-            {% endif %}
-
+              </div>
+              {%- endif %}
             </ul>
-          </nav>
-          
-          <!--<nav class="cover-navigation cover-navigation--primary">-->
-          <nav class="cover-navigation navigation--social">
-            <ul class="navigation">
-              <li class="navigation__item"><a href="https://www.thomas-zuehlke.de" title="link to Blog"><i class="fas fa-link fa-lg"></i>&nbsp;Blog</a></li>
-              <!--<li class="navigation__item"><a href="{{ site.baseurl }}/#" title="link to Tweets" class="panel-button"><i class="icon icon-social-twitter"></i>&nbsp;Tweets</a></li>-->
-              <li class="navigation__item"><a href="{{ site.baseurl }}/#projects" title="List of Projects" class="panel-button projects-button"><i class="fas fa-file-code fa-lg"></i>&nbsp;Projects</a></li>
-            </ul>
-          </nav>
-
+          </div>
         </div>
-
-      </div>
-
-    </div>
-
-    <div class="panel-cover--overlay"></div>
-  </div>
-</header>
+      </nav>
+    </header>
