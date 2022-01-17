@@ -1,6 +1,15 @@
-# Ruby Gems
-*.gem
+# Hugo default output directory
+/public
 
-# Design Files
-*.psd
-*.ai
+## OS Files
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# OSX
+.DS_Store
+
+# Linux 
+.directory
