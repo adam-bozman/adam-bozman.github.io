@@ -6,7 +6,7 @@ description: Jekyll Theme Minimal Resume
 
 # User settings
 username: Hi, I'm Adam
-user_description: I'm a doctoral student in the Carson College of Business at Washington State University where I focus my research on asset pricing, fixed income, behavioral topics, and some monetary policy.  I love to do all kinds of things, but this website acts as a repository for professional use - any of my more interesting activities will be on Twitter or Medium.   
+user_description: I'm a doctoral student in the <a href="https://business.wsu.edu/graduate-programs/phd-business/students-grads/">Carson College of Business</a> at Washington State University where I focus my research on asset pricing, fixed income, behavioral topics, and some monetary policy.  I love to do all kinds of things, but this website acts as a repository for professional use - any of my more interesting activities will be on Twitter or Medium.   
 user_title: A finance PhD and machine learning enthusiast
 email: adam.bozman@wsu.edu
 twitter_username: adam_bozman 
