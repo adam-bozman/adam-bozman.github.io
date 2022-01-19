@@ -1,5 +1,5 @@
 <div>
-  <canvas id="myChart"></canvas>
+  <canvas id="myChart" height="500" width="500"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
@@ -25,7 +25,15 @@
   const config = {
     type: 'radar',
     data: data,
-    options: {}
+    options: {
+      scale: {
+        responsive: true,
+        ticks: {min: 0, max: 100},
+        lineArc: false,
+        pointLabels {fontSize: 14}
+      },
+      legend: {display: false},
+    }
   };
 </script>
 <script>
