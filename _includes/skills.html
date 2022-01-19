@@ -21,16 +21,16 @@
     datasets: [{
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: [85, 100, 87, 100, 95, 85, 90],
+      data: [85, 100, 75, 100, 95, 80, 90],
     }]
   };
 
   const config = {
-    type: 'radar',
+    type: 'polarArea',
     data: data,
     options: {
       scale: {
-        responsive: false,
+        responsive: true,
         ticks: {min: 50, max: 100}
       },
       legend: {display: false},
