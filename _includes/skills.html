@@ -4,26 +4,25 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
+    'Python',
+    'SAS',
+    'GitHub',
+    'Sleep',
+    'R',
+    'WRDS (et al.)',
   ];
 
   const data = {
     labels: labels,
     datasets: [{
-      label: 'My First dataset',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45],
+      data: [70, 100, 60, 100, 80, 75],
     }]
   };
 
   const config = {
-    type: 'line',
+    type: 'radar',
     data: data,
     options: {}
   };
