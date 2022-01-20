@@ -1,6 +1,14 @@
 <div class="user-details">
   <h1>My Skills</h1>
 </div>
+
+<style type="text/css">
+  .myChart-container {
+    width: 400px;
+  }
+
+</style>
+
 <div class="myChart-container" style="position: relative">
   <canvas id="myChart"></canvas>
 </div>
@@ -37,7 +45,6 @@
     data: data,
     options: {
       scale: {
-        grace: '10%',
         responsive: true,
         ticks: {min: 0, max: 100}
       },
